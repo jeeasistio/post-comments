@@ -31,6 +31,7 @@ const Home: NextPage<Props> = ({ initialData }) => {
 
   const handlePage = (newPage: number) => {
     setPage(newPage)
+    window?.scrollTo(0, 0)
   }
   const handleStatus = (newStatus: AlertStatus) => {
     setStatus(newStatus)
