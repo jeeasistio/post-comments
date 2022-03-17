@@ -72,6 +72,7 @@ const Home: NextPage<Props> = ({ initialData }) => {
           component={motion.div}
           initial={{ width: '0%' }}
           whileInView={{ width: '100%' }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         />
 
