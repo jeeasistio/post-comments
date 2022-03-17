@@ -1,4 +1,5 @@
 import { Box, Paper, Typography, Alert } from '@mui/material'
+import { motion } from 'framer-motion'
 import React from 'react'
 import { AlertStatus } from '../pages'
 import Form from './Form'
@@ -16,8 +17,15 @@ const Post = ({ status, handlePage, handleStatus, refetch }: Props) => {
   }
 
   return (
-    <Box sx={{ marginY: 4 }}>
-      <Paper sx={{ p: 4 }}>
+    <Box
+      sx={{ marginY: 4 }}
+      component={motion.div}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      <Paper sx={{ p: 4 }} elevation={4}>
         {status.status !== undefined && (
           <Alert severity={status.status} onClose={handleClose}>
             {status.message}

@@ -1,5 +1,6 @@
-import { AlertColor, Container, Typography } from '@mui/material'
+import { AlertColor, Box, Container, Typography } from '@mui/material'
 import axios from 'axios'
+import { motion } from 'framer-motion'
 import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -47,7 +48,8 @@ const Home: NextPage<Props> = ({ initialData }) => {
     () => getComments(page),
     {
       keepPreviousData: true,
-      initialData: parsedInitialData
+      initialData: parsedInitialData,
+      refetchOnWindowFocus: false
     }
   )
 
@@ -63,6 +65,14 @@ const Home: NextPage<Props> = ({ initialData }) => {
           handlePage={handlePage}
           handleStatus={handleStatus}
           refetch={refetch}
+        />
+
+        <Box
+          sx={{ my: 4, height: 2, backgroundColor: 'grey.300' }}
+          component={motion.div}
+          initial={{ width: '0%' }}
+          whileInView={{ width: '100%' }}
+          transition={{ duration: 0.8 }}
         />
 
         {isError && (

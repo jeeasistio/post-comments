@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import React from 'react'
+import React, { memo } from 'react'
 import Comment from './Comment'
 import { Comment as IComment } from '../interfaces/interfaces'
 import { v4 as uuidv4 } from 'uuid'
@@ -18,4 +18,4 @@ const Comments = ({ comments }: Props) => {
   )
 }
 
-export default Comments
+export default memo(Comments)

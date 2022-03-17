@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.1",
     "axios": "^0.26.1",
+    "framer-motion": "^6.2.8",
     "mongoose": "^6.2.6",
     "mongoose-paginate-v2": "^1.6.3",
     "next": "12.1.0",
